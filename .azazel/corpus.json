@@ -1,0 +1,60 @@
+{
+  "name": "river",
+  "upstream": "riverwm/river",
+  "fork": "godofecht/river",
+  "branch": "azazel-zaza-integration",
+  "notes": "Wayland compositor; pkg-config, C sources, generated modules",
+  "status": "integration scaffold",
+  "preferred_zig": "0.16",
+  "baseline_command": [
+    "zig",
+    "build",
+    "--help"
+  ],
+  "build_zig": "0.16.0",
+  "build_command": [
+    "zig",
+    "build",
+    "--summary",
+    "all"
+  ],
+  "expected_build_classification": "system-dependency",
+  "azazel_command": [
+    "azazel",
+    "parity",
+    "--manifest",
+    ".azazel/parity.json"
+  ],
+  "expected_baseline_classification": "zig-toolchain",
+  "first_targets": [
+    "exe:river",
+    "generated protocol modules",
+    "C/system link metadata"
+  ],
+  "system_deps": [
+    "pkg-config",
+    "wayland",
+    "wlroots",
+    "libevdev",
+    "xkbcommon",
+    "pixman"
+  ],
+  "required_tools": [
+    "pkg-config",
+    "wayland-scanner"
+  ],
+  "pkg_config_libs": [
+    "wayland-scanner"
+  ],
+  "replacement_gaps": [
+    "system dependency preflight",
+    "generated protocol modules",
+    "pkg-config link metadata"
+  ],
+  "integration_kind": "azazel",
+  "parity_status": "scaffold-only",
+  "executable_parity_status": "not-modeled",
+  "executable_parity_command": [],
+  "expected_executable_parity_classification": "not-modeled",
+  "executable_parity_targets": []
+}
